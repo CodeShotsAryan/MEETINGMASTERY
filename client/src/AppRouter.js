@@ -1,21 +1,20 @@
-import React from 'react'
-import { BrowserRouter as Router , Route, Switch } from 'react-router-dom'
-import Login from './Pages/Login'
-import Register from './Pages/Register'
-import Home from './Pages/Home'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Home from './Pages/Home';
+
 const AppRouter = () => {
   return (
-    <div>
-      <Router>
-        <Route path='/' Component={<Home/>} />
-        <Route path='/register' Component={<Register/>} />
-        <Route path='/login' Component={<Login/>} />
-        
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Router>
+  );
+};
 
-      </Router>
-      
-    </div>
-  )
-}
+export default AppRouter;
 
-export default AppRouter
