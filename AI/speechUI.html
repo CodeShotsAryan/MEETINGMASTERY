@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speech to text</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            background: linear-gradient(to right bottom,#d13cff,#031f6a);
+            display: flex;
+            color: #000;
+            align-items: center;
+            justify-content: center;
+            min-width: 100vh;
+        }
+        #convert_text{
+            width: 100%; 
+            height: 200px;
+            border-radius: 10px;
+            resize: none;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .voice_to_text{
+            text-align: center;
+            width: 600px;
+        }
+        h1{
+            font-size: 50px;
+            color: #fff;
+        }
+        button{
+            padding: 12px 20px;
+            background: #0ea4da;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #031f6a;
+        }
+    </style>
+</head>
+<body>
+    <div class="voice_to_text">
+        <h1>voice to text converting</h1>
+        <textarea  id="convert_text"></textarea>
+        <button id="click_to_convert">start recording</button>
+        <button id="click_to_end">end recording</button>
+        <button id="click_to_download">download file</button>
+        
+
+    </div>
+
+    <script type="text/javascript" src="speechRecognition\speechToText.js"></script>
+</body>
+</html>
