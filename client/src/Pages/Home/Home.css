@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2b5876; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4e4376,
+    #2b5876
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4e4376,
+    #2b5876
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+.navbar {
+  /* border: 2px solid; */
+  padding: 30px 80px;
+}
+
+.main-page {
+  /* border: 2px solid; */
+  height: 80vh;
+  width: 100vw;
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.main-page .left {
+  /* border: 2px solid black; */
+  height: 500px;
+  width: 600px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-page .right {
+  /* border: 2px solid black; */
+  height: 500px;
+  width: 600px;
+}
+
+.main-page .left p {
+  font-size: 3.5rem;
+  font-family: "Truculenta", sans-serif;
+  letter-spacing: 5px;
+  margin-top: -120px;
+}
+
+.main-page .left button {
+  border: 2px solid rgb(227, 204, 204);
+  padding: 16px 50px;
+  border-radius: 4px;
+  outline: none;
+  margin-left: -210px;
+  transition: 1s ease;
+}
+
+.main-page .left button:hover {
+  background-color: rgb(227, 204, 204);
+  border: none;
+}
+
+@media (max-width: 600px) {
+  .main-page .left p {
+    font-size: 3.5rem;
+    font-family: "Truculenta", sans-serif;
+    letter-spacing: 5px;
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+
+  .main-page .left button {
+    border: 2px solid rgb(227, 204, 204);
+    padding: 16px 50px;
+    border-radius: 4px;
+    outline: none;
+    margin-left: -20px;
+    transition: 1s ease;
+  }
+
+  .main-page .right {
+    display: none;
+  }
+}
