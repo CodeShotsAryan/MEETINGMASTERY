@@ -18,7 +18,7 @@ const Home = () => {
           <button>New Meeting</button>
         </div>
         <div className="right">
-          images
+          <image src="" />
         </div>
       </div>
     </div>
