@@ -63,12 +63,39 @@ body {
   border-radius: 4px;
   outline: none;
   margin-left: -210px;
-  transition: 1s ease;
+  transition: 0.4s ease;
 }
 
 .main-page .left button:hover {
   background-color: rgb(227, 204, 204);
   border: none;
+}
+
+.navbar{
+  font-size: 1.3rem;
+  /* box-shadow: 2px 2px 10px #294c84; */
+}
+
+.navbar .loginbtns{
+  height: 100%;
+  width: 240px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar .loginbtns button{
+  padding: 6px 20px;
+  border: 2px solid #DBC5C8;
+  border-radius: 6px;
+  text-align: center;
+  color: #DBC5C8;
+  transition: 0.2s ease;
+}
+
+.navbar .loginbtns button:hover{
+  background-color: #DBC5C8;
+  color: #2a2a2a;
 }
 
 @media (max-width: 600px) {
