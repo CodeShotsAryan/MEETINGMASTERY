@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import hero from "../../assets/hero.png";
 import logo from "../../assets/meetinglogo.png";
-
+import { Link , NavLink} from 'react-router-dom'
 const Home = () => {
   return (
     <div>
@@ -12,8 +12,12 @@ const Home = () => {
           <img src={logo} />
         </div>
         <div className="loginbtns">
+        <Link to='/register'>
           <button>Sign up</button>
+        </Link>
+        <Link to='/login'>
           <button>Sign in</button>
+        </Link>
         </div>
       </nav>
 
