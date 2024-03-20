@@ -7,19 +7,27 @@ import Home from './Pages/Home/Home'
 import Register from './Pages/Register'
 import Layout from './Layout'
 import MainMeeting from './Pages/MainMeeting/MainMeeting'
+import LobbyScreen from './Screens/Lobby'
+import socketProvider from './Context/socketProvider'
+import RoomPage from './Screens/Room'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />} >
       <Route path='' element={<Home />} />
       <Route path='/login' element={<Login />} />
+      
       <Route path='/register' element={<Register />} />
       <Route path='/meet' element={<MainMeeting />} />
+      <Route path='/lobby' element={<LobbyScreen />} />
+      <Route path='/room/:roomId' element={<RoomPage/>}/>
   </Route>  
   )
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+  <socketProvider>
+  <RouterProvider router={router} />
+  </socketProvider>
   </React.StrictMode>,
 )
