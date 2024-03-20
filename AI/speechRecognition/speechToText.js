@@ -6,6 +6,7 @@ recognition.continuous = true;
 
 let lastTranscript = ''; // Variable to store the last recorded transcript
 let recordedData = new Set(); // Use a Set to store unique recorded data
+let blob; // Define blob variable outside the event listener
 
 click_to_convert.addEventListener('click', function(){
     recognition.addEventListener('result', e => {
@@ -13,11 +14,15 @@ click_to_convert.addEventListener('click', function(){
             .map(result => result[0])
             .map(result => result.transcript)
             .join('');
-
+           
         if (transcript !== lastTranscript) {
             recordedData.add(transcript); // Add transcript to Set (unique entries only)
             lastTranscript = transcript; // Update lastTranscript
             convert_text.innerHTML = transcript; // Update UI with transcript
+            const uniqueData = [...recordedData].join('\n');
+
+            blob = new Blob([uniqueData], { type: 'text/plain' }); // Define blob variable here
+            recordedData.clear(); // Clear recordedData set after creating blob
         }
     });
 
@@ -28,19 +33,13 @@ click_to_convert.addEventListener('click', function(){
 
 click_to_end.addEventListener('click', function(){
     recognition.stop();
-
-    
 });
 
 click_to_download.addEventListener('click', function(){
-    const uniqueData = [...recordedData].join(' ');
-
-    const blob = new Blob([uniqueData], { type: 'text/plain' });
-  
-    const downloadLink = document.createElement('a');
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = 'recorded_data.txt';
-
-    downloadLink.click();
-})
- 
+    if (blob) {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = 'recorded_data.txt';
+        downloadLink.click();
+    }
+});
