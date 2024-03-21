@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   background: #2b5876; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -118,6 +119,11 @@ body {
 
 .navbar .logo img{
   width: 120px;
+}
+
+.btn-container button:first-child {
+  /* background-color: #your_desired_color;  */
+  color: #fff; 
 }
 
 @keyframes img-float {

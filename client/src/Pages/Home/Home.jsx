@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import hero from "../../assets/hero.png";
 import logo from "../../assets/meetinglogo.png";
-import { Link , NavLink} from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 const Home = () => {
   return (
     <div>
@@ -12,12 +12,12 @@ const Home = () => {
           <img src={logo} />
         </div>
         <div className="loginbtns">
-        <Link to='/register'>
-          <button>Sign up</button>
-        </Link>
-        <Link to='/login'>
-          <button>Sign in</button>
-        </Link>
+          <Link to="/register">
+            <button>Sign up</button>
+          </Link>
+          <Link to="/login">
+            <button>Sign in</button>
+          </Link>
         </div>
       </nav>
 
@@ -28,14 +28,18 @@ const Home = () => {
             Companion"
           </p>
           <div className="btn-container">
-            <button>New Meeting</button>
+            <Link to="/lobby">
+              <button>New Meeting</button>
+            </Link>
             <button>Join Meeting</button>
           </div>
         </div>
         <div className="right">
-          <img src={hero} className="hero-image rounded-md select-none" 
-          draggable="false"
-          alt="Hero Image"
+          <img
+            src={hero}
+            className="hero-image rounded-md select-none"
+            draggable="false"
+            alt="Hero Image"
           />
         </div>
       </div>
