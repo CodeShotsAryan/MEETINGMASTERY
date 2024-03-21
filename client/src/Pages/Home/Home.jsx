@@ -28,10 +28,12 @@ const Home = () => {
             Companion"
           </p>
           <div className="btn-container">
-            <Link to="/lobby">
+            <Link to="/meet">
               <button>New Meeting</button>
             </Link>
-            <button>Join Meeting</button>
+            <Link to="/lobby">
+              <button>Join Meeting</button>
+            </Link>
           </div>
         </div>
         <div className="right">
