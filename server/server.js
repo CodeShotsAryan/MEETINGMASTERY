@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // backend/app.js
 
 const express = require('express');
@@ -23,3 +24,11 @@ app.use('/api/interview', interviewRoutes);
 // Other middleware and configurations...
 
 module.exports = app;
+=======
+const {Server} = require('socket.io')
+const io = new Server(8000)
+
+io.on('connection',(socket)=>{
+    console.log(`Socket connect` , socket.id);
+})
+>>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -25,10 +26,47 @@ const router = createBrowserRouter(
   </Route>  
   )
 )
+=======
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home/Home";
+import Register from "./Pages/Register";
+import Layout from "./Layout";
+import MainMeeting from "./Pages/MainMeeting/MainMeeting";
+import Lobby from "./Screens/Lobby";
+import ContextProvider from "./context/Context";
+import { SocketProvider } from "./context/SocketProvider";
+import RoomPage from "./Screens/Room";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+>>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
+
+      <Route path="/register" element={<Register />} />
+      <Route path="/meet" element={<MainMeeting />} />
+      <Route path="/lobby" element={<Lobby />} />
+      <Route path="/room/:roomId" element={<RoomPage />} />
+    </Route>
+  )
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  
-  <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <SocketProvider>
+      <ContextProvider>
+        <RouterProvider router={router} />
+      </ContextProvider>
+    </SocketProvider>
+  </React.StrictMode>
+);
