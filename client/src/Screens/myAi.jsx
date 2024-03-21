@@ -5,10 +5,8 @@ export const useSpeechRecognition = () => {
   const [recognition, setRecognition] = useState(null);
   let [lastTranscript, setLastTranscript] = useState('');
   const [recordedData, setRecordedData] = useState(new Set());
-  const [blob, setBlob] = useState(null);
-  const [blob2, setBlob2] = useState(null);
+  const [blob, setBlob] = useState(null); // Update state for blob
   const [stringToReturn, setStringToReturn] = useState('');
-  let newBlob ="";
 
   useEffect(() => {
     if (window.webkitSpeechRecognition) {
@@ -29,12 +27,11 @@ export const useSpeechRecognition = () => {
 
     if (transcript !== lastTranscript) {
       setRecordedData(new Set([...recordedData, transcript]));
-      setLastTranscript=transcript;
+      setLastTranscript(transcript); // Correct assignment
       console.log(transcript);
       const uniqueData = [...recordedData].join('\n');
       const newBlob = new Blob([uniqueData], { type: 'text/plain' });
-      setBlob2(newBlob);
-      setBlob(newBlob);
+      setBlob(newBlob); // Update blob state
       setRecordedData(new Set());
     }
   };
@@ -57,10 +54,10 @@ export const useSpeechRecognition = () => {
   };
 
   const clickToDownload = () => {
-    if (newBlob) {
+    if (blob) { // Check if blob is not null
       const downloadLink = document.createElement('a');
       downloadLink.href = URL.createObjectURL(blob);
-      downloadLink.download = 'Recorded_data';
+      downloadLink.download = 'Recorded_data.txt'; // Provide a filename with extension
       downloadLink.click();
       setStringToReturn(lastTranscript);
       document.getElementById('data').value = lastTranscript;
@@ -69,5 +66,3 @@ export const useSpeechRecognition = () => {
 
   return { clickToConvert, clickToEnd, clickToDownload };
 };
-
-

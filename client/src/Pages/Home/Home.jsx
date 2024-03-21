@@ -11,12 +11,12 @@ const Home = () => {
         <div className="logo">
           <img src={logo} />
         </div>
-        <div className="loginbtns">
+        <div className="loginbtns" style={{width: "300px"}}>
           <Link to="/register">
-            <button>Sign up</button>
+            <button style={{width: "120px"}}>Sign up</button>
           </Link>
           <Link to="/login">
-            <button>Sign in</button>
+            <button style={{width: "120px"}}>Sign in</button>
           </Link>
         </div>
       </nav>
