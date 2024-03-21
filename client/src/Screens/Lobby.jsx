@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
-import './Lobby.css'
+import './Lobby.css';
 
-const LobbyScreen = () => {
+const Lobby = () => {
   const [email, setEmail] = useState("");
   const [room, setRoom] = useState("");
 
@@ -36,27 +36,25 @@ const LobbyScreen = () => {
   return (
     <div className="containers">
       <form onSubmit={handleSubmitForm} className="form-container">
-      <h1>Join Meeting</h1>
-      <div>
-
-        <label htmlFor="email">Email ID </label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
+        <h1>Join Meeting</h1>
+        <div>
+          <label htmlFor="email">Email ID </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <br />
         <div>
-
-        <label htmlFor="room">Room Number</label>
-        <input
-          type="text"
-          id="room"
-          value={room}
-          onChange={(e) => setRoom(e.target.value)}
-        />
+          <label htmlFor="room">Room Number</label>
+          <input
+            type="text"
+            id="room"
+            value={room}
+            onChange={(e) => setRoom(e.target.value)}
+          />
         </div>
         <br />
         <button>Join</button>
@@ -65,4 +63,4 @@ const LobbyScreen = () => {
   );
 };
 
-export default LobbyScreen;
+export default Lobby;
