@@ -31,7 +31,7 @@ const Home = () => {
             <Link to="/meet">
               <button>New Meeting</button>
             </Link>
-            <Link to="/lobby">
+            <Link to="/lobby">  
               <button>Join Meeting</button>
             </Link>
           </div>
