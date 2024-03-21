@@ -1,40 +1,10 @@
-<<<<<<< HEAD
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { Route, RouterProvider, createBrowserRouter , createRoutesFromElements} from 'react-router-dom'
-import Login from './Pages/Login'
-import Home from './Pages/Home/Home'
-import Register from './Pages/Register'
-import Layout from './Layout'
-import MainMeeting from './Pages/MainMeeting/MainMeeting'
-import Lobby from './Screens/Lobby'
-import InterviewMeeting from './Pages/InterviewMeeting/InterviewMeeting'
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />} >
-      <Route path='' element={<Home />} />
-      <Route path='/login' element={<Login />} />
-      
-      <Route path='/register' element={<Register />} />
-      <Route path='/meet' element={<MainMeeting />} />
-      <Route path='/lobby' element={<Lobby />} />
-      <Route path='/interviewmeeting' element={<InterviewMeeting />} />
-
-      
-
-  </Route>  
-  )
-)
-=======
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
 import {
   Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
+  BrowserRouter as Router,
+  Routes,
 } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home/Home";
@@ -42,33 +12,30 @@ import Register from "./Pages/Register";
 import Layout from "./Layout";
 import MainMeeting from "./Pages/MainMeeting/MainMeeting";
 import Lobby from "./Screens/Lobby";
-import ContextProvider from "./context/Context";
-import { SocketProvider } from "./context/SocketProvider";
 import RoomPage from "./Screens/Room";
+import { SocketProvider } from "./context/SocketProvider";
+import ContextProvider from "./context/Context";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-<<<<<<< HEAD
-=======
->>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
-
->>>>>>> dd6be4bc7dd70235e560d3f41a74fdf0d9dd081a
-      <Route path="/register" element={<Register />} />
-      <Route path="/meet" element={<MainMeeting />} />
-      <Route path="/lobby" element={<Lobby />} />
-      <Route path="/room/:roomId" element={<RoomPage />} />
-    </Route>
-  )
+const App = () => (
+  <Router>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/meet" element={<MainMeeting />} />
+        <Route path="/lobby" element={<Lobby />} />
+        <Route path="/room/:roomId" element={<RoomPage />} />
+      </Routes>
+    </Layout>
+  </Router>
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <SocketProvider>
       <ContextProvider>
-        <RouterProvider router={router} />
+        <App />
       </ContextProvider>
     </SocketProvider>
   </React.StrictMode>
