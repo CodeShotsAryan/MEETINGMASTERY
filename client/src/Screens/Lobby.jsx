@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import React from 'react'
+=======
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
@@ -32,8 +35,14 @@ const LobbyScreen = () => {
       socket.off("room:join", handleJoinRoom);
     };
   }, [socket, handleJoinRoom]);
+>>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
 
+const Lobby = () => {
   return (
+<<<<<<< HEAD
+    <div>
+     
+=======
     <div className="containers">
       <form onSubmit={handleSubmitForm} className="form-container">
       <h1>Join Meeting</h1>
@@ -61,8 +70,9 @@ const LobbyScreen = () => {
         <br />
         <button>Join</button>
       </form>
+>>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
     </div>
-  );
-};
+  )
+}
 
-export default LobbyScreen;
+export default Lobby

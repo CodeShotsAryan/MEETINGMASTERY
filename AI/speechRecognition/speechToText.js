@@ -14,7 +14,7 @@ click_to_convert.addEventListener('click', function(){
             .map(result => result[0])
             .map(result => result.transcript)
             .join('');
-           
+
         if (transcript !== lastTranscript) {
             recordedData.add(transcript); // Add transcript to Set (unique entries only)
             lastTranscript = transcript; // Update lastTranscript

@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import { Route, RouterProvider, createBrowserRouter , createRoutesFromElements} from 'react-router-dom'
+import Login from './Pages/Login'
+import Home from './Pages/Home/Home'
+import Register from './Pages/Register'
+import Layout from './Layout'
+import MainMeeting from './Pages/MainMeeting/MainMeeting'
+import Lobby from './Screens/Lobby'
+import InterviewMeeting from './Pages/InterviewMeeting/InterviewMeeting'
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Layout />} >
+      <Route path='' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      
+      <Route path='/register' element={<Register />} />
+      <Route path='/meet' element={<MainMeeting />} />
+      <Route path='/lobby' element={<Lobby />} />
+      <Route path='/interviewmeeting' element={<InterviewMeeting />} />
+
+      
+
+  </Route>  
+  )
+)
+=======
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -22,6 +51,11 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
+=======
+>>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
+
+>>>>>>> dd6be4bc7dd70235e560d3f41a74fdf0d9dd081a
       <Route path="/register" element={<Register />} />
       <Route path="/meet" element={<MainMeeting />} />
       <Route path="/lobby" element={<Lobby />} />
