@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // backend/app.js
 
 const express = require('express');
@@ -24,6 +23,7 @@ app.use('/api/interview', interviewRoutes);
 // Other middleware and configurations...
 
 module.exports = app;
+<<<<<<< HEAD
 =======
 const {Server} = require('socket.io')
 const io = new Server(8000)
@@ -31,4 +31,4 @@ const io = new Server(8000)
 io.on('connection',(socket)=>{
     console.log(`Socket connect` , socket.id);
 })
->>>>>>> d2be03bb3547c91e5e1b2a471ad47ff18cbe91a6
+>>>>>>> 47b221a95bf1163433a8f49c696230d794fa2b1d

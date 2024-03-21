@@ -4,10 +4,10 @@
 // npm install @google/generative-ai
 
 import {
-    GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
-  } from "@google/generative-ai";
+  GoogleGenerativeAI,
+  HarmBlockThreshold,
+  HarmCategory,
+} from "@google/generative-ai";
   
   const MODEL_NAME = "gemini-1.0-pro";
   const API_KEY = "AIzaSyCWOLtpZAt6lE3nG_y8RxDan6M4LNC9uSg";

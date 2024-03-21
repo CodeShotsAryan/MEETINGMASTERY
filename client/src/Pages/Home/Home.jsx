@@ -1,9 +1,9 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Home.css";
+import React from "react";
+import { Link } from "react-router-dom";
 import hero from "../../assets/hero.png";
 import logo from "../../assets/meetinglogo.png";
-import { Link, NavLink } from "react-router-dom";
+import "./Home.css";
 const Home = () => {
   return (
     <div>
