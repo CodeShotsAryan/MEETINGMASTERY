@@ -2,12 +2,26 @@ import React, { useEffect, useCallback, useState } from "react";
 import ReactPlayer from "react-player";
 import peer from "../service/peer";
 import { useSocket } from "../context/SocketProvider";
+import { useSpeechRecognition } from './myAi'; // Adjust the import path
+import "./Room.css";
+
+const MyComponent = () => {
+  const { clickToConvert, clickToEnd, clickToDownload } = useSpeechRecognition();
+
+  return (
+    <div>
+      <button  onClick={clickToConvert}>Start Conversion</button>
+      <button onClick={clickToEnd}>Stop Conversion</button>
+      <button onClick={clickToDownload}>Download Data</button>
+    </div>
+  );
+};
 
 const RoomPage = () => {
   const socket = useSocket();
   const [remoteSocketId, setRemoteSocketId] = useState(null);
   const [myStream, setMyStream] = useState();
-  const [remoteStream, setRemoteStream] = useState();
+  const [remoteStream, setRemoteStream] = useState(); 
 
   const handleUserJoined = useCallback(({ email, id }) => {
     console.log(`Email ${email} joined room`);
@@ -53,6 +67,10 @@ const RoomPage = () => {
     },
     [sendStreams]
   );
+
+  const handlecall_and_convert = () => {
+    clickToConvert(); 
+  };
 
   const handleNegoNeeded = useCallback(async () => {
     const offer = await peer.getOffer();
@@ -139,6 +157,7 @@ const RoomPage = () => {
           />
         </>
       )}
+      <MyComponent />
     </div>
   );
 };
