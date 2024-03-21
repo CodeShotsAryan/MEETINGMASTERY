@@ -4,22 +4,28 @@ const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 recognition.continuous = true;
 
-let lastTranscript = ''; // Variable to store the last recorded transcript
-let recordedData = new Set(); // Use a Set to store unique recorded data
-let blob; // Define blob variable outside the event listener
+let lastTranscript = ''; 
+let recordedData = new Set(); 
+let blob; 
+let blob2; 
+let stringtoreturn ;
 
-click_to_convert.addEventListener('click', function(){
+export function click_to_convert (){
     recognition.addEventListener('result', e => {
         const transcript = Array.from(e.results)
             .map(result => result[0])
             .map(result => result.transcript)
             .join('');
-
+           
         if (transcript !== lastTranscript) {
             recordedData.add(transcript); // Add transcript to Set (unique entries only)
-            lastTranscript = transcript; // Update lastTranscript
-            convert_text.innerHTML = transcript; // Update UI with transcript
+            lastTranscript = transcript;
+             // Update lastTranscript
+            //convert_text.innerHTML = transcript; 
+            // Update UI with transcript
             const uniqueData = [...recordedData].join('\n');
+
+            blob2 = new Blob([uniqueData], { type: 'text/plain' }); // Define blob variable here
 
             blob = new Blob([uniqueData], { type: 'text/plain' }); // Define blob variable here
             recordedData.clear(); // Clear recordedData set after creating blob
@@ -29,17 +35,23 @@ click_to_convert.addEventListener('click', function(){
     if (speech == true) {
         recognition.start();
     }
-});
+};
 
-click_to_end.addEventListener('click', function(){
+function click_to_end (){
     recognition.stop();
-});
+};
 
-click_to_download.addEventListener('click', function(){
+function click_to_download(){
     if (blob) {
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = 'recorded_data.txt';
+        downloadLink.download = "Recorded_data";
+        
         downloadLink.click();
+         stringtoreturn = lastTranscript;
+
+
+         document.getElementById('data').value = stringtoreturn;
     }
-});
+   
+};

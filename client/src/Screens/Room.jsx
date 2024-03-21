@@ -2,12 +2,31 @@ import React, { useEffect, useCallback, useState } from "react";
 import ReactPlayer from "react-player";
 import peer from "../service/peer";
 import { useSocket } from "../context/SocketProvider";
+import { useSpeechRecognition } from './myAi'; // Adjust the import path
+import "./Room.css";
+
+const MyComponent = () => {
+  const { clickToConvert, clickToEnd, clickToDownload } = useSpeechRecognition();
+
+  return (
+    <div>
+      <button  onClick={clickToConvert}>Start Conversion</button>
+      <button onClick={clickToEnd}>Stop Conversion</button>
+      <button onClick={clickToDownload}>Download Data</button>
+    </div>
+  );
+};
 
 const RoomPage = () => {
   const socket = useSocket();
   const [remoteSocketId, setRemoteSocketId] = useState(null);
+<<<<<<< HEAD
   const [myStream, setMyStream] = useState(null);
   const [remoteStream, setRemoteStream] = useState(null);
+=======
+  const [myStream, setMyStream] = useState();
+  const [remoteStream, setRemoteStream] = useState(); 
+>>>>>>> 42260baaf3f03184e78574a957c7b2c5fd28cad0
 
   const handleUserJoined = useCallback(({ email, id }) => {
     console.log(`Email ${email} joined room`);
@@ -55,6 +74,22 @@ const RoomPage = () => {
     }
   }, [myStream]);
 
+<<<<<<< HEAD
+=======
+  const handleCallAccepted = useCallback(
+    ({ from, ans }) => {
+      peer.setLocalDescription(ans);
+      console.log("Call Accepted!");
+      sendStreams();
+    },
+    [sendStreams]
+  );
+
+  const handlecall_and_convert = () => {
+    clickToConvert(); 
+  };
+
+>>>>>>> 42260baaf3f03184e78574a957c7b2c5fd28cad0
   const handleNegoNeeded = useCallback(async () => {
     try {
       const offer = await peer.getOffer();
@@ -138,4 +173,41 @@ const RoomPage = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <h1>Room Page
+=======
+      <h1>Room Page</h1>
+      <h4>{remoteSocketId ? "Connected" : "No one in room"}</h4>
+      {myStream && <button onClick={sendStreams}>Send Stream</button>}
+      {remoteSocketId && <button onClick={handleCallUser}>CALL</button>}
+      {myStream && (
+        <>
+          <h1>My Stream</h1>
+          <ReactPlayer
+            playing
+            muted
+            height="100px"
+            width="200px"
+            url={myStream}
+          />
+        </>
+      )}
+      {remoteStream && (
+        <>
+          <h1>Remote Stream</h1>
+          <ReactPlayer
+            playing
+            muted
+            height="100px"
+            width="200px"
+            url={remoteStream}
+          />
+        </>
+      )}
+      <MyComponent />
+    </div>
+  );
+};
+
+export default RoomPage;
+>>>>>>> 42260baaf3f03184e78574a957c7b2c5fd28cad0
