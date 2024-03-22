@@ -24,14 +24,14 @@ const Chat = () => {
     <div className="main ">
       <div className="nav">
         <p >ChatBot</p>
-        <img src={assets.user_icon} />
+        {/* <img src={assets.user_icon} /> */}
       </div>
       <div className="main-container">
         {!showResult ? (
           <>
             {/* <div className="greet"> */}
               <p>
-                <span>Hello, Dev.</span>
+                {/* <span>Hello, Dev.</span> */}
               </p>
               {/* <p>How can i help you today?</p>
             </div> */}

@@ -5,13 +5,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 4px;
+    /* background-color: black; */
 }
 
 .mains{
-    height: 96vh;
+    height: 98vh;
     width: 72vw;
     /* border: 2px solid; */
-    margin-left: -100px;
+    margin-left: -110px;
+    background-color: #0e023c8f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }
 
 .side{
@@ -20,4 +29,107 @@
     /* border: 2px solid; */
     /* margin-left: 10px; */
     margin-right: -80px;
+}
+
+.mains{
+    /* display: flex; */
+    /* justify-content: ; */
+    /* align-items: flex-start; */
+}
+
+.video-navbar{
+    /* border: 2px solid; */
+    width: 96%; 
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin-top: 10px;
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+.profile-pic img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-top: -6px;
+}
+.video-navbar .profile .profile-text h2{
+    font-size: 1.6rem;
+    /* line-height: 10px; */
+}
+.video-navbar .profile .profile-text p{
+    font-size: 1rem;
+    line-height: 10px;
+}
+
+.addbutton{
+    /* border: 2px solid; */
+    padding: 12px 26px;
+    border-radius: 10px;
+    background-color: #0e023cca;
+    transition: 0.2s ease;
+}
+
+.addbutton:hover{
+    background-color: #4b32ae47;
+}
+
+.main-video{
+    height: 400px;
+    width: 1000px;
+    /* border: 2px solid; */
+    border-radius: 10px;
+    background-color: #0e023cca;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+.video-handle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16%;
+    width: 300px;
+    /* border: 2px solid; */
+    margin-bottom: 4px;
+    gap: 20px;
+}
+
+.video-handle p{
+    background-color: rgba(56, 55, 135, 0.664);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.secondary-videos{
+ height: 170px;   
+ width: 1000px;
+ /* border: 2px solid; */
+ border-radius: 10px;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.secondary-videos div{
+    height: 95%;
+    width: 200px;
+    /* border: 2px solid; */
+    border-radius: 10px;
+    background-color: #0e023cca;
+    
 }

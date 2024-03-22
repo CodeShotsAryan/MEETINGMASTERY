@@ -4,9 +4,9 @@
     /* padding-bottom: 15vh; */
     position: relative;
     width: 400px;
-    /* border: 2px solid #4E4376; */
-    margin-right: -80px;
-    background-color: #4e43768f;
+    /* border: 2px solid black; */
+    margin-right: -110px;
+    background-color: #0e023c8f;
     border-radius: 10px;
     /* width: 400px; */
 }
@@ -17,7 +17,7 @@
     justify-content: space-between;
     font-size: 22px;
     /* padding: 20px; */
-    color: #585858;
+    color: #ffffff;
     /* margin-right: -120px; */
 }
 
@@ -26,6 +26,10 @@
     border-radius: 50%;
 }
 
+.main .nav p{
+    margin-left: 20px;
+    margin-top: 10px;
+}
 .main-container{
     max-width: 500px;
     margin: auto;
@@ -158,7 +162,7 @@
 
 .result-data{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: 20px;
 }
 
