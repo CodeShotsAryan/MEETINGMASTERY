@@ -1,11 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketProvider";
-<<<<<<< HEAD
 import "./Lobby.css";
-=======
-import './Lobby.css';
->>>>>>> 42260baaf3f03184e78574a957c7b2c5fd28cad0
 
 const Lobby = () => {
   const [email, setEmail] = useState("");
@@ -49,7 +45,6 @@ const Lobby = () => {
   }, [socket, handleJoinRoom]);
 
   return (
-<<<<<<< HEAD
     <div className="lobby-container">
       <form onSubmit={handleSubmitForm} className="lobby-form">
         <h1>Join Meeting</h1>
@@ -61,28 +56,6 @@ const Lobby = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-=======
-    <div className="containers">
-      <form onSubmit={handleSubmitForm} className="form-container">
-        <h1>Join Meeting</h1>
-        <div>
-          <label htmlFor="email">Email ID </label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <br />
-        <div>
-          <label htmlFor="room">Room Number</label>
-          <input
-            type="text"
-            id="room"
-            value={room}
-            onChange={(e) => setRoom(e.target.value)}
->>>>>>> 42260baaf3f03184e78574a957c7b2c5fd28cad0
           />
         </div>
         <div>
