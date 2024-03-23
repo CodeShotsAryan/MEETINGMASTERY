@@ -181,3 +181,15 @@
     border-radius: 50%;
     background-color: #0e023cca;
   }
+
+  .caption{
+    position: absolute;
+    top: 520px;
+    width: 600px;
+    height: 40px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.282);
+  }

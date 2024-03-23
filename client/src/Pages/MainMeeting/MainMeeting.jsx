@@ -65,7 +65,6 @@ const MainMeeting = () => {
       user_email: "some@gmail.com",
       user_id: "aksn",
     },
-
   ];
   const [meetingMembers, setMeetingMembers] = useState(members);
   const [isShowAll, setIsShowAll] = useState(false);
@@ -82,17 +81,19 @@ const MainMeeting = () => {
       <div className="mains">
         {isShowAll ? (
           <>
-          <button className="backbtn" onClick={handleShowAllClickFalse}><i class="fa-solid fa-arrow-left"></i></button>
-          <div className="grid-container">
-            {/* <p>All Members</p> */}
-            {members.map((currentMember) => {
-              return(
-              <div key={currentMember.user_id} className="grid-item">
-                <p>{currentMember.user_name}</p>
-              </div>
-              )
-            })}
-          </div>
+            <button className="backbtn" onClick={handleShowAllClickFalse}>
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div className="grid-container">
+              {/* <p>All Members</p> */}
+              {members.map((currentMember) => {
+                return (
+                  <div key={currentMember.user_id} className="grid-item">
+                    <p>{currentMember.user_name}</p>
+                  </div>
+                );
+              })}
+            </div>
           </>
         ) : (
           <>
@@ -122,10 +123,25 @@ const MainMeeting = () => {
                   <i className="fa-solid fa-hand"></i>
                 </p>
                 <p>
+                  {/* caption generation button */}
+                  <button>
+                    <i class="fa-solid fa-closed-captioning"></i>
+                  </button>
+                </p>
+                <p>
                   <i className="fa-solid fa-bars"></i>
                 </p>
               </div>
             </div>
+
+
+
+            {/* caption will be displayed here */}
+            <p className="caption">healkfndslfnclsinflsi</p>
+
+
+
+
             <div className="secondary-videos">
               {meetingMembers.slice(0, 4).map((currentMembers) => {
                 return (
