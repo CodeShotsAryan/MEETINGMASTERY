@@ -7,12 +7,12 @@ const interviewRoutes = require('./Routes/InterviewRoutes');
 const app = express();
 
 // Connect to MongoDB Atlas
-mongoose.connect('mongodb+srv://meetingmastery:meetingmastery.1edtnwv.mongodb.net/your_database_name?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log('Connected to MongoDB Atlas'))
-.catch(error => console.error('Error connecting to MongoDB Atlas:', error));
+// mongoose.connect('mongodb+srv://meetingmastery:meetingmastery.1edtnwv.mongodb.net/your_database_name?retryWrites=true&w=majority', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
+// .then(() => console.log('Connected to MongoDB Atlas'))
+// .catch(error => console.error('Error connecting to MongoDB Atlas:', error));
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
@@ -23,12 +23,9 @@ app.use('/api/interview', interviewRoutes);
 // Other middleware and configurations...
 
 module.exports = app;
-<<<<<<< HEAD
-=======
 const {Server} = require('socket.io')
 const io = new Server(8000)
 
 io.on('connection',(socket)=>{
     console.log(`Socket connect` , socket.id);
 })
->>>>>>> 47b221a95bf1163433a8f49c696230d794fa2b1d

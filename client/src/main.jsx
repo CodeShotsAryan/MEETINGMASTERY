@@ -19,7 +19,7 @@ import RoomPage from "./Screens/Room";
 import { SocketProvider } from "./context/SocketProvider";
 import ContextProvider from "./context/Context";
 import { createRoot } from 'react-dom/client';
-
+import MeetingFrame from "./Pages/InterviewMeeting/MeetingFrame";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
@@ -29,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="/meet" element={<MainMeeting />} />
       <Route path="/lobby" element={<Lobby />} />
       <Route path="/room/:roomId" element={<RoomPage />} />
+      <Route path="/interview"  element={<MeetingFrame/>} />
     </Route>
   )
 );
