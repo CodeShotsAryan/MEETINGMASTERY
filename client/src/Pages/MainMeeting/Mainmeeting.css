@@ -71,7 +71,7 @@
 
 .addbutton{
     /* border: 2px solid; */
-    padding: 12px 26px;
+    padding: 0px 0px;
     border-radius: 10px;
     background-color: #0e023cca;
     transition: 0.2s ease;
@@ -90,7 +90,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
 }
 .video-handle{
     display: flex;
@@ -118,6 +117,23 @@
     cursor: pointer;
 }
 
+.video-handle p button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(56, 55, 135, 0.664);
+    outline: none;
+    border: none;
+}
+.video-handle p button:hover{
+    background-color: rgba(56, 55, 135, 0.821);
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
 
 .secondary-videos{
  height: 170px;   
@@ -139,7 +155,9 @@
     justify-content: center;    
     align-items: flex-end;
 }
-.secondary-videos button{
+
+
+.secondary-videos .showallbtn{
     padding: 6px 14px;
     border-radius: 10px;
     background-color: #0e023cca;
@@ -192,4 +210,142 @@
     justify-content: flex-start;
     align-items: center;
     background-color: rgba(128, 128, 128, 0.282);
+  }
+
+  @media only screen and (max-width: 600px) {
+    body{
+        
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    .mains{
+        height: 98vh;
+        width: 100vw;
+        /* border: 2px solid; */
+        margin-left: 0px;
+        margin-top: -2px;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+    .main-video{
+        height: 200px;
+        width: 330px;
+        /* border: 2px solid; */
+        border-radius: 10px;
+        background-color: #0e023cca;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: -20px;
+
+    }
+    .video-navbar{
+        /* border: 2px solid; */
+        width: 96%; 
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 10px;
+        margin-top: -10px;
+
+    }
+    
+    .profile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+    .profile-pic img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        /* margin-top: -6px; */
+    }
+    .video-navbar .profile .profile-text h2{
+        font-size: 0.8rem;
+        /* line-height: 10px; */
+    }
+    .video-navbar .profile .profile-text p{
+        font-size: 0.6rem;
+        line-height: 10px;
+    }
+    
+    .addbutton{
+        /* border: 2px solid; */
+        padding: 0px 0px;
+        border-radius: 10px;
+        background-color: #0e023cca;
+        transition: 0.2s ease;
+        outline: none;
+        border: none;
+    }
+    
+    .addbutton:hover{
+        background-color: #4b32ae47;
+    }
+    .video-handle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 16%;
+        width: 300px;
+        /* border: 2px solid; */
+        margin-bottom: -380px;
+        z-index: 99;
+        gap: 20px;
+
+    }
+    
+    .video-handle p{
+        background-color: rgba(56, 55, 135, 0.664);
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .video-handle p:hover{
+        background-color: rgba(56, 55, 135, 0.821);
+        cursor: pointer;
+    }
+  
+ 
+    .caption{
+        display: none;
+    }
+    .secondary-videos{
+    }
+    .secondary-videos{
+        height: 320px;   
+        width: 340px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 160px);
+       }
+       
+       .secondary-videos div{
+           height: 95%;
+           width: 160px;
+           /* border: 2px solid; */
+           border-radius: 10px;
+           background-color: #0e023cca;
+           display: flex;
+           justify-content: center;    
+           align-items: flex-end;
+       }
+       
+       
+       .secondary-videos .showallbtn{
+           padding: 6px 14px;
+           border-radius: 10px;
+           background-color: #0e023cca;
+           display: none;
+       }
+       
+       
   }
