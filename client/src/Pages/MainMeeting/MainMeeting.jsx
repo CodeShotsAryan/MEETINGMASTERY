@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Mainmeeting.css";
 import Chat from "./Chat";
 import { assets } from "../../assets/assets";
+import { Context } from "../../context/Context";
+
 const MainMeeting = () => {
   const members = [
     {
@@ -78,6 +80,21 @@ const MainMeeting = () => {
       isAdmin: false,
     },
   ];
+  const {
+    onSent,
+    input,
+    setInput,
+    recentPrompt,
+    setRecentPrompt,
+    prevPrompts,
+    setPrevPrompts,
+    showResult,
+    setShowResult,
+    loading,
+    setLoading,
+    resultData,
+    setResultData,
+  } = useContext(Context);
   const [meetingMembers, setMeetingMembers] = useState(members);
   const [isShowAll, setIsShowAll] = useState(false);
   const [isMobileView, setIsMobileView] = useState(false);
@@ -114,7 +131,7 @@ const MainMeeting = () => {
             {isShowAll ? (
               <>
                 <button className="backbtn" onClick={handleShowAllClickFalse}>
-                  <i class="fa-solid fa-arrow-left"></i>
+                  <i className="fa-solid fa-arrow-left"></i>
                 </button>
                 <div className="grid-container">
                   {/* <p>All Members</p> */}
@@ -152,8 +169,8 @@ const MainMeeting = () => {
                     <p>
                       <i className="fa-solid fa-video"></i>
                     </p>
-                    <p onClick={()=>setIsChatBot(!isChatBot)}>
-                      <i className="fa-solid fa-hand"></i>
+                    <p onClick={() => setIsChatBot(!isChatBot)}>
+                    {isChatBot ? <i className="fa-solid fa-user-group"></i> : <i className="fa-solid fa-comment"></i>}
                     </p>
                     <p>
                       {/* caption generation button */}
@@ -170,10 +187,61 @@ const MainMeeting = () => {
                 {/* caption will be displayed here */}
                 <p className="caption">healkfndslfnclsinflsi</p>
 
-                <div className="secondary-videos">
-                  {isChatBot ? 
-                    null
-                   : (
+                <div className={isMobileView && isChatBot ? "secondary-videos mobile-view" : "secondary-videos"}>
+                  {isChatBot ? (
+                    <>
+                      <div className="resp-main ">
+                        <div className="resp-main-container">
+                          {!showResult ? (
+                            <>
+                              <p></p>
+                            </>
+                          ) : (
+                            <div className="resp-result">
+                              {/* <div className="resp-result-title">
+                                <img src={assets.user_icon} />
+                                <p>{recentPrompt}</p>
+                              </div> */}
+                              <div className="resp-result-data">
+                                {/* <img src={assets.gemini_icon} /> */}
+                                {loading ? (
+                                  <div className="resp-loader">
+                                  <p>loading</p>
+                                    <hr />
+                                    <hr />
+                                    <hr />
+                                  </div>
+                                ) : (
+                                  <p
+                                    dangerouslySetInnerHTML={{
+                                      __html: resultData,
+                                    }}
+                                  ></p>
+                                )}
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="resp-main-bottom">
+                            <div className="resp-search-box">
+                              <input
+                                onChange={(e) => setInput(e.target.value)}
+                                value={input}
+                                type="text"
+                                placeholder="Enter a prompt here"
+                              />
+                              <div>
+                                <img
+                                  onClick={() => onSent()}
+                                  src={assets.send_icon}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
                     <>
                       {" "}
                       {meetingMembers.slice(0, 4).map((currentMembers) => {
