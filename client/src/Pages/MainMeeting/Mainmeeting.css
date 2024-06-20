@@ -212,7 +212,7 @@ align-items: center;
   background-color: rgba(128, 128, 128, 0.282);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 600px) {
   body{
       
       overflow-y: hidden;
